@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Clothing Log</a>
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+      <li class="active"><%= link_to "Home", root_path %></li>
+    </ul>
+    
+    <% if user_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav navbar-nav dropdown"> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          </ul>     
+        </li> 
+      </ul>
+    <% end %> 
+  </div>
+</nav>
