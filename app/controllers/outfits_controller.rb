@@ -1,5 +1,6 @@
 class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :edit, :update, :destroy]
+  autocomplete :item, :name, :full => true
 
   # GET /outfits
   # GET /outfits.json
@@ -69,6 +70,6 @@ class OutfitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def outfit_params
-      params.require(:outfit).permit(:date)
+      params.require(:outfit).permit(:date, :item_ids => [])
     end
 end

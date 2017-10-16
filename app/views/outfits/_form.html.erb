@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= f.label :date %>
-    <%= f.text_field :date, data: { :provide => 'datepicker'}, value: Date.today.strftime('%d/%m/%Y') %>
+    <%= f.text_field :date, data: { :provide => 'datepicker'}, value: Date.today.strftime('%m/%d/%Y') %>
+  </div>
+  <div class="field">
+    <%= f.label :items %>
+    <%= f.autocomplete_field :item_ids, autocomplete_item_name_outfits_path %>         
   </div>
 
   <div class="actions">

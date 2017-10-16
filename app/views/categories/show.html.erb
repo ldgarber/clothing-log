@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Category:</strong>
   <%= @category.name %>
+</p>
+<p>
+  <strong>Items:</strong>
+  <% @category.items.each do |item| %> 
+    <p><%= item.name %><p></br>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

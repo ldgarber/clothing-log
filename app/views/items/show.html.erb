@@ -15,5 +15,14 @@
   <%= @item.color %>
 </p>
 
+<% if @item.categories.length > 0 %> 
+  <p>
+    <strong>Categories:</strong>
+    <% @item.categories.each do |category| %> 
+      <%= category.name %>
+    <% end %> 
+  </p>
+<% end %> 
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
