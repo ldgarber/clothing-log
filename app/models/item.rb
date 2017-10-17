@@ -12,7 +12,6 @@ class Item < ApplicationRecord
     long_name << "#{self.brand} " if self.brand != nil
     long_name << "#{self.color} " if self.color != nil
     long_name << self.name
-    long_name.downcase!
-    return long_name
+    return long_name.split(" ").map{|word| word.capitalize}.join(" ")
   end
 end

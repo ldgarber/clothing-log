@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Outfits</h1>
+  <%= button_to "Log an outfit", new_outfit_path, method: :get %>
 
 <div class="row">
   <%= render @outfits %>
 </div>
 <br>
-
-<%= link_to 'New Outfit', new_outfit_path %>
