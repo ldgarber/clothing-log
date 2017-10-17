@@ -61,3 +61,5 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-datepicker-rails'
 #jquery autocomplete
 gem 'rails-jquery-autocomplete'
+#chosen jquery
+gem 'chosen-rails'

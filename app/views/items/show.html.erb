@@ -2,9 +2,10 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @item.name %>
+  <%= @item.long_name %>
 </p>
 
+<!-- 
 <p>
   <strong>Brand:</strong>
   <%= @item.brand %>
@@ -14,12 +15,18 @@
   <strong>Color:</strong>
   <%= @item.color %>
 </p>
+-->
+
+<p><strong>Worn on:</strong></p>
+<div class="row">
+  <%= render @item.outfits %>
+</div>
 
 <% if @item.categories.length > 0 %> 
   <p>
     <strong>Categories:</strong>
     <% @item.categories.each do |category| %> 
-      <%= category.name %>
+      <%= link_to category.name, category_path(category) %>
     <% end %> 
   </p>
 <% end %> 

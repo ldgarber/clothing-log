@@ -13,6 +13,7 @@
  *= require_tree .
  #= require_style
  *= require_self
+ *= require chosen
  #= require bootstrap-datepicker
  #= require jquery-ui
  */

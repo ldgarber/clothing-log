@@ -12,9 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chosen-jquery
 //= require jquery-ui/widgets/autocomplete
 //= require autocomplete-rails
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require_tree .
+//
+$(function() {
+  $('.chosen-select').chosen({
+    search_contains: true, 
+    width: '300px', 
+    display_selected_options: false
+  }); 
+  $('#datepicker').datepicker({ 
+    format: 'mm/dd/yyyy'
+  })
+}); 

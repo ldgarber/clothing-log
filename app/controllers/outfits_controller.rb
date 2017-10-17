@@ -1,5 +1,6 @@
 class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   autocomplete :item, :name, :full => true
 
   # GET /outfits
@@ -25,7 +26,7 @@ class OutfitsController < ApplicationController
   # POST /outfits
   # POST /outfits.json
   def create
-    @outfit = Outfit.new(outfit_params)
+    @outfit = Outfit.new(filtered_params)
 
     respond_to do |format|
       if @outfit.save
@@ -42,7 +43,7 @@ class OutfitsController < ApplicationController
   # PATCH/PUT /outfits/1.json
   def update
     respond_to do |format|
-      if @outfit.update(outfit_params)
+      if @outfit.update(filtered_params)
         format.html { redirect_to @outfit, notice: 'Outfit was successfully updated.' }
         format.json { render :show, status: :ok, location: @outfit }
       else
@@ -71,5 +72,11 @@ class OutfitsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def outfit_params
       params.require(:outfit).permit(:date, :item_ids => [])
+    end
+
+    def filtered_params
+      filtered_params = outfit_params
+      filtered_params[:date] = Date.strptime(filtered_params[:date], '%m/%d/%Y')
+      return filtered_params
     end
 end

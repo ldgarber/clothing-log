@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @outfit.date %>
+  <strong>Worn on:</strong>
+  <%= @outfit.display_date %>
 </p>
+
+<p><strong>Items</strong></p>
+<%= render @outfit.items %> 
 
 <%= link_to 'Edit', edit_outfit_path(@outfit) %> |
 <%= link_to 'Back', outfits_path %>
