@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016203219) do
+ActiveRecord::Schema.define(version: 20171018182426) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -47,8 +47,12 @@ ActiveRecord::Schema.define(version: 20171016203219) do
 
   create_table "outfits", force: :cascade do |t|
     t.datetime "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "fitpic_file_name"
+    t.string   "fitpic_content_type"
+    t.integer  "fitpic_file_size"
+    t.datetime "fitpic_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

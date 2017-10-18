@@ -1,12 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Worn on:</strong>
-  <%= @outfit.display_date %>
-</p>
+<div class="row">
+  <div class="col-sm-8">
+    <% if @outfit.fitpic.exists? %> 
+      <%= image_tag @outfit.fitpic.url(:medium) %>
+    <% end %> 
+  </div>
+  <div class="col-sm-4">
+    <p>
+      <strong>Worn on:</strong>
+      <%= @outfit.display_date %>
+    </p>
 
-<p><strong>Items</strong></p>
-<%= render @outfit.items %> 
+    <p><strong>Items</strong></p>
+    <%= render @outfit.items %> 
 
-<%= link_to 'Edit', edit_outfit_path(@outfit) %> |
-<%= link_to 'Back', outfits_path %>
+    <%= link_to 'Edit', edit_outfit_path(@outfit) %> |
+    <%= link_to 'Back', outfits_path %>
+  </div>
+</div>

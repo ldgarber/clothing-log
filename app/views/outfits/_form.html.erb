@@ -20,6 +20,11 @@
     <%= f.collection_select(:item_ids, current_user.items, :id, :long_name, {}, {class: 'chosen-select', multiple: true}) %> 
   </div>
 
+  <div class="field">
+    <p>Add a picture of your outfit: (optional) </p>
+    <%= f.file_field :fitpic %>
+  </div> 
+
   <div class="actions">
     <%= f.submit %>
   </div>
