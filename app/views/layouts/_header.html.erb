@@ -8,7 +8,7 @@
       <li class=<%= current_page?(items_path) ? "active" : ""%>><%= link_to "Items", items_path %></li>
       <li class=<%= current_page?(categories_path) ? "active" : ""%>><%= link_to "Categories", categories_path %></li>
       <li class=<%= current_page?(outfits_path) ? "active" : ""%>><%= link_to "Outfits", outfits_path %> 
-      <li class=""><%= link_to "Stats", root_path %> 
+      <li class=""><%= link_to "Stats", stats_path %> 
     </ul>
     
     <% if user_signed_in? %>

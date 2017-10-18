@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stats</h1>
+
+<div class="col-sm-4">
+  <h3>Most worn items:</h3>
+  <% Item.most_worn(10).each do |item| %>
+    <p><%= link_to item.long_name, item_path(item)%> - (<%= item.worn_count %>)</p>
+  <% end %> 
+</div>
+
+<div class="col-sm-4">
+  <h3>Never worn:</h3>
+  <% Item.never_worn(10).each do |item| %> 
+    <p><%= link_to item.long_name, item_path(item)%> - (<%= item.worn_count %>)</p>
+  <% end %> 
+</div>
