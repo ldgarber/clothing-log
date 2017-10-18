@@ -3,6 +3,8 @@ class Outfit < ApplicationRecord
   has_many :outfit_items
   has_many :items, through: :outfit_items
   accepts_nested_attributes_for :items
+  has_attached_file :fitpic, styles: { medium: "400", thumb: "100" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :fitpic, content_type: /\Aimage\/.*\z/
   
   def display_date
     self.date.strftime('%A, %B %d, %Y') 

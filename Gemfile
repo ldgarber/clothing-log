@@ -63,3 +63,5 @@ gem 'bootstrap-datepicker-rails'
 gem 'rails-jquery-autocomplete'
 #chosen jquery
 gem 'chosen-rails'
+#paperclip
+gem "paperclip", "~> 5.0.0"
