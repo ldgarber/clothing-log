@@ -87,3 +87,7 @@ div {
 label {
   display: block;
 }
+
+label.required:after {
+  content: "*"; 
+} 

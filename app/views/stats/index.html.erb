@@ -2,16 +2,34 @@
 
 <h1>Stats</h1>
 
-<div class="col-sm-4">
-  <h3>Most worn items:</h3>
-  <% Item.most_worn(10).each do |item| %>
-    <p><%= link_to item.long_name, item_path(item)%> - (<%= item.worn_count %>)</p>
-  <% end %> 
+<div class="row">
+  <div class="col-sm-4">
+    <h3>Most worn items:</h3>
+    <% Item.most_worn(10).each do |item| %>
+      <p><%= link_to item.long_name, item_path(item)%> - (<%= item.worn_count %>)</p>
+    <% end %> 
+  </div>
+
+  <div class="col-sm-4">
+    <h3>Never worn:</h3>
+    <% Item.never_worn(10).each do |item| %> 
+      <p><%= link_to item.long_name, item_path(item)%> - (<%= item.worn_count %>)</p>
+    <% end %> 
+  </div>
+
+  <div class="col-sm-4">
+    <h3>Lowest cost per wear:</h3>
+    <% Item.lowest_cost_per_wear(5).each do |item| %> 
+      <p><%= link_to item.long_name, item_path(item)%> - (<%= item.cost_per_wear %>)</p>
+    <% end %> 
+  </div>
 </div>
 
-<div class="col-sm-4">
-  <h3>Never worn:</h3>
-  <% Item.never_worn(10).each do |item| %> 
-    <p><%= link_to item.long_name, item_path(item)%> - (<%= item.worn_count %>)</p>
-  <% end %> 
+<div class="row">
+  <div class="col-sm-4">
+    <h3>Highest cost per wear:</h3>
+    <% Item.highest_cost_per_wear(5).each do |item| %> 
+      <p><%= link_to item.long_name, item_path(item)%> - (<%= item.cost_per_wear %>)</p>
+    <% end %> 
+  </div>
 </div>

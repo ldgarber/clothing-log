@@ -7,6 +7,10 @@ class Item < ApplicationRecord
   has_many :categories, through: :item_categories
   accepts_nested_attributes_for :categories
 
+  def price=(price_input)
+    write_attribute :price, currency_to_number(price_input)
+  end
+
   def long_name
     long_name = ""
     long_name << "#{self.brand} " if self.brand != nil
@@ -17,6 +21,22 @@ class Item < ApplicationRecord
 
   def worn_count
     self.outfits.length
+  end
+
+  def cost_per_wear
+    if (self.worn_count == nil or self.worn_count == 0)
+      if (self.price == nil)
+        return 0
+      else
+        return self.price
+      end
+    else
+      if (self.price == nil)
+        return 0 
+      else
+        return self.price / self.worn_count
+      end
+    end
   end
 
   def self.most_worn(num)
@@ -33,5 +53,17 @@ class Item < ApplicationRecord
       never_worn << item if item.worn_count == 0
     end
     return never_worn.take(num)
+  end
+
+  def self.lowest_cost_per_wear(num)
+    Item.all.sort_by(&:cost_per_wear).take(num)
+  end
+
+  def self.highest_cost_per_wear(num)
+    Item.all.sort_by(&:cost_per_wear).reverse.take(num)
+  end
+
+  def currency_to_number(currency_value)
+    (currency_value.is_a? String) ? currency_value.scan(/[.0-9]/).join.to_d : currency_value
   end
 end
