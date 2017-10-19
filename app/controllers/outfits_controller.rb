@@ -71,7 +71,7 @@ class OutfitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def outfit_params
-      params.require(:outfit).permit(:date, :fitpic, :item_ids => [])
+      params.require(:outfit).permit(:date, :fitpic, :description, :item_ids => [])
     end
 
     def filtered_params

@@ -16,6 +16,12 @@
   </div>
 
   <div class="field">
+    <%= f.label :description %>
+    <p>Where did you wear this outfit? Thoughts/notes, temperature, etc.</p> 
+    <%= f.text_area :description %> 
+  </div> 
+
+  <div class="field">
     <%= f.label :add_items_to_your_outfit %>
     <%= f.collection_select(:item_ids, current_user.items, :id, :long_name, {}, {class: 'chosen-select', multiple: true}) %> 
   </div>
