@@ -23,7 +23,8 @@
 
   <div class="field">
     <%= f.label :add_items_to_your_outfit %>
-    <%= f.collection_select(:item_ids, current_user.items, :id, :long_name, {}, {class: 'chosen-select', multiple: true}) %> 
+    <%= f.collection_select(:item_ids, current_user.items, :id, :long_name, {}, {class: 'chosen-select', multiple: true, id: "item_collection_select"}) %> 
+
   </div>
 
   <div class="field">

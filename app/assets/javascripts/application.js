@@ -29,4 +29,5 @@ $(function() {
   $('#datepicker').datepicker({ 
     format: 'mm/dd/yyyy'
   })
+  $('.chosen-select').trigger("chosen:updated"); 
 }); 
