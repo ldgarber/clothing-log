@@ -17,5 +17,8 @@
 !/log/.keep
 !/tmp/.keep
 
+#Ignore fitpic files from paperclip
+/public/system/outfits/fitpics/*
+
 # Ignore Byebug command history file.
 .byebug_history
