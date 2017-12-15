@@ -1,14 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @item.long_name %>
 </p>
 
 <p>
-  Price: <%= number_to_currency(@item.price) %>
+  <strong>Price: </strong>
+  <%= number_to_currency(@item.price) %>
 </p>
-<!-- 
+
 <p>
   <strong>Brand:</strong>
   <%= @item.brand %>
@@ -18,7 +17,6 @@
   <strong>Color:</strong>
   <%= @item.color %>
 </p>
--->
 
 <p><strong>Worn on:</strong></p>
 <div class="row">

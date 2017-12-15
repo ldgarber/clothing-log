@@ -12,11 +12,7 @@ class Item < ApplicationRecord
   end
 
   def long_name
-    long_name = ""
-    long_name << "#{self.brand} " if self.brand != nil
-    long_name << "#{self.color} " if self.color != nil
-    long_name << self.name
-    return long_name.split(" ").map{|word| word.capitalize}.join(" ")
+    self.name
   end
 
   def worn_count
