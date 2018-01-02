@@ -10,6 +10,11 @@
     </div>
   <% end %>
 
+  <div class="field"> 
+    <%= f.label :private %> (Select this box if you want your outfit to be hidden from the public landing page) <br>
+    <%= f.check_box :private %> 
+  </div> 
+
   <div class="field">
     <%= f.label :date %>
     <%= f.text_field :date, data: { :provide => 'datepicker'}, value: Date.today.strftime('%m/%d/%Y'), id: 'datepicker' %>
