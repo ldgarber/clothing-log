@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102201336) do
+ActiveRecord::Schema.define(version: 20180102210411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,8 @@ ActiveRecord::Schema.define(version: 20180102201336) do
     t.datetime "fitpic_updated_at"
     t.text     "description"
     t.boolean  "private",             default: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_outfits_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -113,4 +115,5 @@ ActiveRecord::Schema.define(version: 20180102201336) do
   add_foreign_key "item_categories", "items"
   add_foreign_key "outfit_items", "items"
   add_foreign_key "outfit_items", "outfits"
+  add_foreign_key "outfits", "users"
 end

@@ -4,8 +4,8 @@
       <%= image_tag outfit.fitpic.url(:thumb), :class => "card-img-top" %>
     <% end %> 
     <div class="card-body">
-      <%#= link_to current_user.email if outfit.user != current_user %>
       <h4 class="card-title" style="margin-top: 10px"><%= outfit.display_date %></h4>
+      <%= link_to outfit.user.email if outfit.user != current_user %>
       <div><%= outfit.description %></div>
       <div><%= render outfit.items %></div>
       <%= link_to 'Show', outfit, :class => "card-link" %>

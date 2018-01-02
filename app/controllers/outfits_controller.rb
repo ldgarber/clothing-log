@@ -6,7 +6,7 @@ class OutfitsController < ApplicationController
   # GET /outfits
   # GET /outfits.json
   def index
-    @outfits = Outfit.all
+    @outfits = current_user.outfits
   end
 
   # GET /outfits/1
@@ -26,7 +26,7 @@ class OutfitsController < ApplicationController
   # POST /outfits
   # POST /outfits.json
   def create
-    @outfit = Outfit.new(filtered_params)
+    @outfit = current_user.outfits.build(filtered_params)
 
     respond_to do |format|
       if @outfit.save
