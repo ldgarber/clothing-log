@@ -9,4 +9,12 @@ class Outfit < ApplicationRecord
   def display_date
     self.date.strftime('%A, %B %d, %Y') 
   end
+
+  def self.public
+    where("private = ?", false) 
+  end
+
+  def self.private
+    where("private = ?", true)
+  end
 end
