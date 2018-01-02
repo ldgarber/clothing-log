@@ -4,6 +4,9 @@
       <h1>Welcome!</h1>
 
       <%= button_to "Log an outfit", new_outfit_path, method: :get %>
+
     </div>
   </div>
+  <h3>Check out what some other users are wearing</h3>
+  <%= render @outfits %> 
 </div>
