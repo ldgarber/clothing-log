@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   root "welcome#index" 
   get "/stats" => "stats#index"
+  get "/users/:id/show" => "users#show", as: :user
 end

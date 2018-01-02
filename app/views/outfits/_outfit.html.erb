@@ -5,7 +5,7 @@
     <% end %> 
     <div class="card-body">
       <h4 class="card-title" style="margin-top: 10px"><%= outfit.display_date %></h4>
-      <%= link_to outfit.user.email if outfit.user != current_user %>
+      <%= link_to outfit.user.email, user_path(outfit.user) if outfit.user != current_user %>
       <div><%= outfit.description %></div>
       <div><%= render outfit.items %></div>
       <%= link_to 'Show', outfit, :class => "card-link" %>
