@@ -67,7 +67,7 @@ gem 'rails-jquery-autocomplete'
 #chosen jquery
 gem 'chosen-rails'
 #paperclip
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 5.1.0"
 #activeadmin
 gem 'activeadmin' 
 # with integrations
