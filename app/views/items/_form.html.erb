@@ -33,7 +33,11 @@
 
   <div class="field">
     <%= f.label :categories %></br>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, :include_hidden => false %>
+    <% if !(@categories.length == 0) %> 
+      <%= f.collection_check_boxes :category_ids, @categories, :id, :name, :include_hidden => false %>
+    <% else %> 
+      <p>Create some categories in the Categories page!</p>
+    <% end %> 
   </div> 
 
   <div class="actions">

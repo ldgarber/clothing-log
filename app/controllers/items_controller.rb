@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_categories, only: [:show, :edit, :new]
   before_action :authenticate_user!
 
   # GET /items
@@ -20,6 +21,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @categories = current_user.categories
   end
 
   # POST /items
@@ -66,6 +68,10 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def set_categories
+      @categories = current_user.categories
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

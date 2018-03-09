@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :items
   has_many :outfits
+  has_many :categories
   validates_uniqueness_of :email
 end
