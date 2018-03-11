@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:show, :edit, :new]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /items
   # GET /items.json

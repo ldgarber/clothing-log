@@ -9,8 +9,12 @@
       <div><%= outfit.description %></div>
       <div><%= render outfit.items %></div>
       <%= link_to 'Show', outfit, :class => "card-link" %>
-      <%= link_to 'Edit', edit_outfit_path(outfit), :class => "card-link" %>
-      <%= link_to 'Destroy', outfit, method: :delete, data: { confirm: 'Are you sure?' },:class => "card-link" %>
+      <% if can? :edit, outfit %>
+        <%= link_to 'Edit', edit_outfit_path(outfit), :class => "card-link" %>
+      <% end %> 
+      <% if can? :destroy, outfit %>
+        <%= link_to 'Destroy', outfit, method: :delete, data: { confirm: 'Are you sure?' },:class => "card-link" %>
+      <% end %> 
     </div>
   </div>
 </div>

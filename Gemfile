@@ -72,5 +72,6 @@ gem "paperclip", "~> 5.1.0"
 gem 'activeadmin' 
 # with integrations
 gem 'cancan' 
+gem 'cancancan', '~> 2.0'
 gem 'draper' 
 gem 'pundit'

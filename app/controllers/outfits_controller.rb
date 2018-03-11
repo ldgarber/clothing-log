@@ -2,6 +2,7 @@ class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   autocomplete :item, :name, :full => true
+  load_and_authorize_resource
 
   # GET /outfits
   # GET /outfits.json
