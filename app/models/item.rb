@@ -2,9 +2,9 @@ class Item < ApplicationRecord
   validates :name, presence: true
   belongs_to :user
   has_many :outfit_items
-  has_many :outfits, through: :outfit_items
+  has_many :outfits, through: :outfit_items, dependent: :destroy
   has_many :item_categories
-  has_many :categories, through: :item_categories
+  has_many :categories, through: :item_categories, dependent: :destroy
   accepts_nested_attributes_for :categories
 
   def price=(price_input)
