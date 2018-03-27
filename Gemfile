@@ -7,6 +7,8 @@ end
 
 #Use devise for authentication/login
 gem 'devise' 
+#figaro for env vars
+gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'
 # Use postgresql as the database for Active Record
@@ -68,6 +70,8 @@ gem 'rails-jquery-autocomplete'
 gem 'chosen-rails'
 #paperclip
 gem "paperclip", "~> 5.1.0"
+# aws
+gem 'aws-sdk', '~> 2.3' 
 #activeadmin
 gem 'activeadmin' 
 # with integrations
