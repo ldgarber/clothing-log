@@ -18,7 +18,9 @@
     <p><strong>Items</strong></p>
     <%= render @outfit.items %> 
 
-    <%= link_to 'Edit', edit_outfit_path(@outfit) %> |
+    <% if can? :edit, @outfit %> 
+      <%= link_to 'Edit', edit_outfit_path(@outfit) %> |
+    <% end %> 
     <%= link_to 'Outfits', outfits_path %>
   </div>
 </div>
