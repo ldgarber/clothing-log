@@ -69,7 +69,7 @@ gem 'rails-jquery-autocomplete'
 #chosen jquery
 gem 'chosen-rails'
 #paperclip
-gem "paperclip", "~> 5.1.0"
+gem "paperclip", "~> 5.2.0"
 # aws
 gem 'aws-sdk', '~> 2.3' 
 #fog
