@@ -55,4 +55,14 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   Paperclip.options[:command_path] = '/usr/bin'
+  config.paperclip_defaults = {
+    :storage => :fog,
+    :fog_credentials => {
+      :provider => "AWS", 
+      :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'], 
+      :aws_secret_key_id => ENV['AWS_SECRET_ACCESS_KEY']
+    },  
+    :fog_directory => ENV['S3_BUCKET_NAME']
+  }
+
 end

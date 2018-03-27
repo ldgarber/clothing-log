@@ -72,6 +72,8 @@ gem 'chosen-rails'
 gem "paperclip", "~> 5.1.0"
 # aws
 gem 'aws-sdk', '~> 2.3' 
+#fog
+gem 'fog-aws'
 #activeadmin
 gem 'activeadmin' 
 # with integrations
